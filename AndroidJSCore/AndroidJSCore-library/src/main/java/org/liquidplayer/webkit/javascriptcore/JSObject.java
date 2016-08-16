@@ -134,7 +134,7 @@ public class JSObject extends JSValue {
             @Override
             public void run() {
                 valueRef = make(context.ctxRef(), 0L);
-                Method[] methods = iface.getDeclaredMethods();
+                Method[] methods = getClass().getDeclaredMethods();
                 for (Method m : methods) {
                     JSObject f = new JSFunction(context, m,
                             JSObject.class, JSObject.this);
